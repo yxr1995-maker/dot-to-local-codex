@@ -1,7 +1,8 @@
-# Codex with ChatGPT
+# dot-to-local-codex
 
-> ChatGPT thinks. Codex works.
-> ChatGPT 负责思考，Codex 负责干活。
+> ChatGPT thinks. Local Codex works.
+> ChatGPT 负责思考，本地 Codex 负责干活。
+> *(formerly codex-with-chatgpt / c2c — fully backwards-compatible with `c2c` commands and aliases)*
 
 > [!IMPORTANT]
 > **遇到问题？** 请先向 Codex 发送 **「更新 Codex with ChatGPT」** 并重试。更新到最新版本可以解决大多数已知问题。  
@@ -43,7 +44,7 @@ Detailed docs below are in English · 详细中文文档见 **[README.zh-CN.md](
 
 1. 环境自检：需要 git 和 Node.js ≥ 20，缺什么就自动安装
   （macOS 用 Homebrew，Windows 用 winget），同时安装 cloudflared。
-2. 下载：把 https://github.com/XiaoDuoYa/codex-with-chatgpt 克隆到
+2. 下载：把 https://github.com/yxr1995-maker/dot-to-local-codex 克隆到
    ~/codex-with-chatgpt（已存在就 git pull 更新）。
 3. 构建：在该目录里执行 corepack pnpm install 和 corepack pnpm build。
 4. 安装 Skill：把仓库里的 skill/SKILL.md 复制到
@@ -63,13 +64,13 @@ Detailed docs below are in English · 详细中文文档见 **[README.zh-CN.md](
 paragraph below, paste it to your coding agent (Codex), and go grab a coffee:
 
 ```text
-Please install and configure "Codex with ChatGPT" for me, fully automatically.
+Please install and configure "dot-to-local-codex" for me, fully automatically.
 I am a non-technical user — do everything yourself:
 
 1. Check the environment: git and Node.js >= 20 must be available. Install
    anything missing yourself (macOS: Homebrew, Windows: winget). Also install
    cloudflared.
-2. Download: clone https://github.com/XiaoDuoYa/codex-with-chatgpt into
+2. Download: clone https://github.com/yxr1995-maker/dot-to-local-codex into
    ~/codex-with-chatgpt (if it already exists, git pull to update).
 3. Build: inside that folder run `corepack pnpm install` then `corepack pnpm build`.
 4. Install the Skill: copy skill/SKILL.md to
@@ -253,3 +254,10 @@ connector setup, zero-touch first-run experience.
    <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=xiaoduoya/codex-with-chatgpt&type=date&legend=top-left" />
  </picture>
 </a>
+
+
+## Release notes
+
+This repository is the `dot-to-local-codex` distribution. The existing `c2c` CLI and `Codex with ChatGPT` connector naming remain compatible with existing installations. Local task tools are opt-in, and OAuth scopes are explicit: `workspace.read`, `codex.local.read`, `codex.local.write`, and `offline_access` when requested. Do not enable write access or full host permissions by default. The connector binds tasks to a registered workspace and forwards model names such as `jev-auto`; provider availability is host-specific. Desktop GUI visibility is not guaranteed.
+
+The 2026-10-05 local acceptance verified create, read, and resume behavior through the real connector, including `LOCAL_CONNECTOR_OK` and `LOCAL_CONNECTOR_OK RESUME_OK`. This is a behavior check for that local installation, not a guarantee that every workspace, provider, GUI, or automation path has migrated.

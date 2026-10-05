@@ -1,11 +1,12 @@
 {
-  "name": "codex-with-chatgpt",
+  "name": "dot-to-local-codex",
   "version": "0.1.3",
-  "description": "ChatGPT thinks. Codex works. Use ChatGPT as the planning brain while keeping the Codex harness.",
+  "description": "Local Codex task connector for dot, with OAuth-scoped workspace binding and optional jev-auto forwarding.",
   "type": "module",
   "license": "MIT",
   "bin": {
-    "c2c": "./bin/c2c.js"
+    "c2c": "./bin/c2c.js",
+    "dot-to-local-codex": "./bin/c2c.js"
   },
   "engines": {
     "node": ">=20"
